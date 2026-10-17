@@ -3,25 +3,25 @@
 <img src="images/logo.jpeg" alt="Project logo" width="800" align="center">
 
 
-I have an old #Raspberry Pi that runs some programs and scripts. Nothing special, but it has had a WiFi problem from the start. It randomly stops working
+I have an old Raspberry Pi that runs some programs and scripts. Nothing special, but it has had a WiFi problem from the start. It randomly stops working
 
 After many tests, I noticed the metal cooling on the board was covering the built-in antenna. I looked at the board, and I saw that the pcb traces were already designed to support an external antenna. So I cut one trace and soldered a short wire of the right length directly to it
 
 <img src="images/raspberry.jpg" alt="External antenna modification on the Raspberry Pi" width="320">
 
-Things started working better with a good signal, but the #WiFi still kept freezing for no clear reason. I wanted to find out why
+Things started working better with a good signal, but the WiFi still kept freezing for no clear reason. I wanted to find out why
 
 Spoiler: it happens when the router changes channels. The firmware or driver fails to follow the change. Fix: set a fixed channel on the router
 
-To understand the problem, I downloaded #BCM firmware v7.45.265 from my Raspberry Pi and started disassembling it. I won't describe the whole process, as I don't think many people would be interested. But here are the things I found by chance
+To understand the problem, I downloaded BCM firmware v7.45.265 from my Raspberry Pi and started disassembling it. I won't describe the whole process, as I don't think many people would be interested. But here are the things I found by chance
 
-Before getting into the technical details: I reported the issues to #Infineon's #PSIRT and #Security Raspberry. Even though Infineon said the component was obsolete, they checked the issues and fixed all the bugs I found, making a new version 7.45.306. (I haven't had time to check the new version yet)
+Before getting into the technical details: I reported the issues to Infineon's PSIRT and Security Raspberry. Even though Infineon said the component was obsolete, they checked the issues and fixed all the bugs I found, making a new version 7.45.306. (I haven't had time to check the new version yet)
 
-I asked them to assign CVEs, but Infineon refused to handle the #CVE assignment directly. They said researchers have to do it themselves. I requested 8 separate CVE IDs from #MITRE. They have been stuck there since July (other organizations seem not to be interested).
+I asked them to assign CVEs, but Infineon refused to handle the CVE assignment directly. They said researchers have to do it themselves. I requested 8 separate CVE IDs from MITRE. They have been stuck there since July (other organizations seem not to be interested).
 
 <img src="images/mitre.png" alt="MITRE CVE information" width="420">
 
-My personal opinion: I think these reporting and CVE assignment systems are ridiculous. They ignore you; if you are lucky, they ask for proof after proof and #pocs, waste a lot of your time, and then... 
+My personal opinion: I think these reporting and CVE assignment systems are ridiculous. They ignore you; if you are lucky, they ask for proof after proof and pocs, waste a lot of your time, and then... 
 
 Long story short: there is no cve assigned yet
 
