@@ -44,7 +44,9 @@ This value is controlled by the attacker and is used without checking if it fits
 8. **Heap overflow** — any frame with a vendor-specific IE.
 
 Three bugs (4, 5 and 6) can be triggered during passive scanning alone. The target device does not need to connect to or authenticate with the attacker. It only needs to scan for nearby networks and process the malicious frame
+
 Five bugs ( 1, 2, 3, 7 and 8) can be triggered through a rogue AP or evil twin during authentication or association
+
 Bug 8 is the most serious in terms of overflow size. It uses a 16-bit length controlled by the attacker, allowing a copy of up to 255 bytes. This is much larger than the typical 8-bit IE fields in the other cases
 
 **The firmware has no security protections: no aslr, no stack canary, and memory is fully readable, writable and executable. This makes it possible that an attacker could go beyond a simple crash and achieve remote code execution RCE, rather than only causing a denial of service (DoS)**
